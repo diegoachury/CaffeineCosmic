@@ -2,65 +2,67 @@
 
 # ☕ Caffeine for COSMIC
 
-**Mantén tu pantalla despierta desde el panel de COSMIC™.**
+**Keep your screen awake from the COSMIC™ panel.**
 
-Un indicador ligero (estilo *Amphetamine* / *Caffeine*) para el escritorio **COSMIC** de
-Pop!_OS que evita que la pantalla se apague o el equipo se suspenda por inactividad,
-con un solo clic desde la bandeja del sistema.
+A lightweight indicator (in the spirit of *Amphetamine* / *Caffeine*) for the
+**COSMIC** desktop on Pop!_OS that prevents the screen from turning off or the
+system from suspending due to inactivity, with a single click from the system tray.
 
-[![Licencia: GPL-3.0](https://img.shields.io/badge/Licencia-GPL--3.0-blue.svg)](LICENSE)
-[![Hecho con Rust](https://img.shields.io/badge/Rust-1.80%2B-orange.svg?logo=rust)](https://www.rust-lang.org/)
-[![COSMIC](https://img.shields.io/badge/Escritorio-COSMIC-7c4dff.svg)](https://system76.com/cosmic)
-[![Flathub](https://img.shields.io/badge/Flathub-pr%C3%B3ximamente-lightgrey.svg?logo=flathub)](#-instalación)
+**English** · [Español](README.es.md)
 
-<!-- Sustituye por una captura real una vez tomada (también necesaria para Flathub) -->
-<img src="assets/screenshot.png" alt="Menú de Caffeine for COSMIC en la bandeja" width="340">
+[![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](LICENSE)
+[![Made with Rust](https://img.shields.io/badge/Rust-1.80%2B-orange.svg?logo=rust)](https://www.rust-lang.org/)
+[![COSMIC](https://img.shields.io/badge/Desktop-COSMIC-7c4dff.svg)](https://system76.com/cosmic)
+
+<img src="assets/screenshot.png" alt="Caffeine for COSMIC menu in the tray" width="340">
 
 </div>
 
 ---
 
-## ✨ Características
+## ✨ Features
 
-- **Activación con un clic** desde la bandeja (Status Area) del panel COSMIC.
-- **Sesiones temporizadas**: 15 min, 30 min, 1 h, 2 h, 4 h — se desactivan solas al expirar.
-- **Sesión indefinida** (mantener despierto hasta desactivar manualmente).
-- **Icono dinámico** que distingue claramente el estado activo / inactivo y se
-  recolorea según el tema del panel (iconos simbólicos).
-- **Sin dependencias de sistema**: 100 % Rust puro (sin GTK, sin `libdbus`).
-- **Huella mínima**: un único binario, sin demonios extra.
+- **One-click toggle** from the COSMIC panel's Status Area.
+- **Timed sessions**: 15 min, 30 min, 1 h, 2 h, 4 h — they turn off automatically when they expire.
+- **Indefinite session** (stay awake until you turn it off manually).
+- **Dynamic icon** that clearly shows the active / inactive state and is recolored
+  to match the panel theme (symbolic icons).
+- **No system dependencies**: 100% pure Rust (no GTK, no `libdbus`).
+- **Tiny footprint**: a single binary, no extra daemons.
 
-## 🧩 ¿Cómo funciona?
+## 🧩 How does it work?
 
-COSMIC es un escritorio Wayland; el clásico `caffeine` de GNOME/X11 no aplica aquí.
-En su lugar, esta app usa los mecanismos nativos de COSMIC:
+COSMIC is a Wayland desktop; the classic GNOME/X11 `caffeine` does not apply here.
+Instead, this app uses COSMIC's native mechanisms:
 
-- **Inhibición de inactividad** → llama por D-Bus a
-  `org.freedesktop.ScreenSaver.Inhibit`, interfaz que implementa **`cosmic-idle`**.
-  Guarda la *cookie* devuelta y la libera con `UnInhibit` al desactivar. Si el
-  proceso muere, COSMIC libera la inhibición automáticamente.
-- **Icono en el panel** → se publica como **StatusNotifierItem** (SNI), que el applet
-  `cosmic-applet-status-area` muestra en la bandeja.
+- **Idle inhibition** → it calls `org.freedesktop.ScreenSaver.Inhibit` over D-Bus,
+  an interface implemented by **`cosmic-idle`**. It stores the returned *cookie* and
+  releases it with `UnInhibit` when deactivated. If the process dies, COSMIC releases
+  the inhibition automatically.
+- **Panel icon** → it is published as a **StatusNotifierItem** (SNI), which the
+  `cosmic-applet-status-area` applet shows in the tray.
 
-## 📋 Requisitos
+## 📋 Requirements
 
-- **Pop!_OS / escritorio COSMIC** (sesión Wayland).
-- El applet **Status Area** activo en el panel (incluido por defecto en COSMIC).
-- `cosmic-idle` en ejecución (parte de la sesión COSMIC estándar).
-- Para compilar: **Rust 1.80+** (`cargo`).
+- **Pop!_OS / COSMIC desktop** (Wayland session).
+- The **Status Area** applet enabled in the panel (included by default in COSMIC).
+- `cosmic-idle` running (part of the standard COSMIC session).
+- To build: **Rust 1.80+** (`cargo`).
 
-## 📦 Instalación
+## 📦 Installation
 
-### Flathub *(próximamente)*
+### COSMIC Flatpak repository
+
+> Flathub does not accept desktop applets, so this is distributed through the
+> [COSMIC Flatpak repository](https://github.com/pop-os/cosmic-flatpak)
+> (submitted, pending review). Once merged, install it with:
 
 ```bash
-flatpak install flathub io.github.diegoachury.CaffeineCosmic
+flatpak remote-add --if-not-exists --user cosmic https://apt.pop-os.org/cosmic/cosmic.flatpakrepo
+flatpak install --user cosmic io.github.diegoachury.CaffeineCosmic
 ```
 
-> El empaquetado para Flathub está en preparación (ver [Roadmap](#-roadmap)). Una vez
-> publicado, aparecerá también automáticamente en la **tienda COSMIC**.
-
-### Desde el código fuente
+### From source
 
 ```bash
 git clone https://github.com/diegoachury/CaffeineCosmic.git
@@ -68,95 +70,104 @@ cd CaffeineCosmic
 ./install.sh
 ```
 
-El script compila en modo *release* e instala:
+The script builds in *release* mode and installs:
 
-| Recurso | Destino |
+| Resource | Destination |
 |---|---|
-| Binario | `~/.local/bin/cosmic-caffeine` |
-| Iconos | `~/.local/share/icons/hicolor/scalable/{apps,status}/` |
-| Lanzador + AppStream | `~/.local/share/applications/` · `~/.local/share/metainfo/` |
-| Autoarranque | `~/.config/autostart/io.github.diegoachury.CaffeineCosmic.desktop` |
+| Binary | `~/.local/bin/cosmic-caffeine` |
+| Icons | `~/.local/share/icons/hicolor/scalable/{apps,status}/` |
+| Launcher + AppStream | `~/.local/share/applications/` · `~/.local/share/metainfo/` |
+| Autostart | `~/.config/autostart/io.github.diegoachury.CaffeineCosmic.desktop` |
 
-Asegúrate de tener `~/.local/bin` en tu `PATH`. Arráncalo en la sesión actual con:
+Make sure `~/.local/bin` is in your `PATH`. Start it in the current session with:
 
 ```bash
 cosmic-caffeine &
 ```
 
-## 🖱️ Uso
+## 🖱️ Usage
 
-- **Clic izquierdo** sobre el icono ☕ → alterna una sesión **indefinida**.
-- **Clic derecho** → menú con:
-  - *Mantener activo (indefinido)*
-  - *Activar por tiempo* → 15 min · 30 min · 1 h · 2 h · 4 h
-  - *Desactivar* · *Salir*
+- **Left click** on the ☕ icon → toggles an **indefinite** session.
+- **Right click** → menu with:
+  - *Keep awake (indefinite)*
+  - *Activate for a time* → 15 min · 30 min · 1 h · 2 h · 4 h
+  - *Deactivate* · *Quit*
 
-El icono indica el estado: **taza llena** = activo · **taza tachada** = inactivo.
+The icon shows the state: **full cup** = active · **crossed-out cup** = inactive.
 
-## 🛠️ Desarrollo
+## 🛠️ Development
 
 ```bash
-# Compilar
+# Build
 cargo build --release
 
-# Ejecutar en primer plano (logs en stderr)
+# Run in the foreground (logs to stderr)
 cargo run
 
-# Comprobaciones
+# Checks
 cargo clippy --all-targets
 cargo fmt --check
 ```
 
-### Estructura del proyecto
+### Project structure
 
 ```
 CaffeineCosmic/
 ├── Cargo.toml · Cargo.lock     # Crate (ksni + zbus)
-├── src/main.rs                 # Lógica del tray + inhibición D-Bus
-├── data/                       # Recursos instalables (nombrados por App ID)
+├── src/main.rs                 # Tray logic + D-Bus inhibition
+├── data/                       # Installable resources (named after the App ID)
 │   ├── io.github.diegoachury.CaffeineCosmic.desktop
 │   ├── io.github.diegoachury.CaffeineCosmic.metainfo.xml
 │   └── icons/hicolor/scalable/{apps,status}/*.svg
-├── build-aux/                  # Empaquetado Flatpak
-│   ├── io.github.diegoachury.CaffeineCosmic.yml   # Manifiesto
-│   └── cargo-sources.json                         # Dependencias para build offline
-├── assets/screenshot.png       # Captura (catálogo / metainfo)
-├── Makefile                    # Instalación (PREFIX=/app o $HOME/.local)
-├── install.sh                  # Instalación local desde fuente
+├── build-aux/                  # Flatpak packaging
+│   ├── io.github.diegoachury.CaffeineCosmic.yml    # Manifest
+│   ├── cargo-sources.json                          # Dependencies for offline builds
+│   └── cosmic-flatpak/                             # Manifest for the COSMIC repo
+├── assets/screenshot.png       # Screenshot (store / metainfo)
+├── Makefile                    # Install (PREFIX=/app or $HOME/.local)
+├── install.sh                  # Local install from source
 ├── LICENSE                     # GPL-3.0
 └── README.md
 ```
 
-## 📚 Documentación
+## 📚 Documentation
 
-- [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) — guía paso a paso para publicar en Flathub.
-- [`docs/LECCIONES-APRENDIDAS.md`](docs/LECCIONES-APRENDIDAS.md) — historia del proceso, errores reales y buenas prácticas para evitarlos desde el inicio.
+- [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) — step-by-step packaging/publishing guide (Spanish).
+- [`docs/LECCIONES-APRENDIDAS.md`](docs/LECCIONES-APRENDIDAS.md) — process history, real errors and best practices (Spanish).
 
 ## 🗺️ Roadmap
 
-- [ ] **Publicación en Flathub** (App ID `io.github.diegoachury.CaffeineCosmic`) — ver [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
-  - [x] Manifiesto Flatpak + `metainfo.xml` (AppStream) + `Makefile`.
-  - [x] `cargo-sources.json` para build offline.
-  - [x] Ajuste de sandbox D-Bus (detección de Flatpak para `ksni`).
-  - [ ] Captura `assets/screenshot.png`.
-  - [ ] Validación local con `flatpak-builder` y PR a `flathub/flathub`.
-- [ ] Cuenta atrás visible en el menú para sesiones temporizadas.
-- [ ] Opción *"Mientras una app esté en ejecución"*.
-- [ ] Tiempos de sesión personalizados.
+- [ ] **Publication to the COSMIC Flatpak repository** (App ID `io.github.diegoachury.CaffeineCosmic`).
+  - [x] Flatpak manifest + `metainfo.xml` (AppStream) + `Makefile`.
+  - [x] `cargo-sources.json` for offline builds.
+  - [x] D-Bus sandbox tweak (Flatpak detection for `ksni`).
+- [ ] Visible countdown in the menu for timed sessions.
+- [ ] *"While an app is running"* option.
+- [ ] Custom session durations.
 
-## 🤝 Contribuir
+## 🤝 Contributing
 
-Las incidencias y *pull requests* son bienvenidas. Antes de enviar cambios:
-`cargo fmt`, `cargo clippy` y verifica que el icono aparece y alterna correctamente
-en la bandeja de COSMIC.
+Issues and pull requests are welcome. Before submitting changes: run `cargo fmt`,
+`cargo clippy`, and verify that the icon appears and toggles correctly in the
+COSMIC tray.
 
-## 📄 Licencia
+## 💖 Donations
 
-Distribuido bajo la licencia **GNU GPL-3.0-only**. Consulta [`LICENSE`](LICENSE).
+If this is useful to you, you can support development with **Bitcoin (BTC)**:
 
-## 🙏 Agradecimientos
+```
+bc1qdul5hesqdhsqyx7pe5cj5v3jlm8xv4mvmvznmj
+```
 
-- [`ksni`](https://crates.io/crates/ksni) — implementación de StatusNotifierItem en Rust.
-- [`zbus`](https://crates.io/crates/zbus) — D-Bus puro en Rust.
-- El equipo de [System76](https://system76.com/) y el ecosistema **COSMIC**.
-- Inspirado en *Amphetamine* (macOS) y *Caffeine* (GNOME).
+Thank you! 🙏
+
+## 📄 License
+
+Distributed under the **GNU GPL-3.0-only** license. See [`LICENSE`](LICENSE).
+
+## 🙏 Acknowledgments
+
+- [`ksni`](https://crates.io/crates/ksni) — StatusNotifierItem implementation in Rust.
+- [`zbus`](https://crates.io/crates/zbus) — pure-Rust D-Bus.
+- The [System76](https://system76.com/) team and the **COSMIC** ecosystem.
+- Inspired by *Amphetamine* (macOS) and *Caffeine* (GNOME).
