@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <g fill="none" stroke="#2e3436" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+    <!-- cuerpo de la taza (solo contorno = inactiva) -->
+    <path d="M3.2 6 H10.3 V9.2 a3 3 0 0 1 -3 3 H6.2 a3 3 0 0 1 -3 -3 Z"/>
+    <!-- asa -->
+    <path d="M10.3 6.9 H11.8 a2 2 0 0 1 0 3.4 H10.3"/>
+    <!-- platillo -->
+    <path d="M2.6 13.4 H10.9"/>
+    <!-- diagonal de "apagado" -->
+    <path d="M2.4 13.6 L13.4 2.6" stroke-width="1.3"/>
+  </g>
+</svg>

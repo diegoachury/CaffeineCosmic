@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2026 Diego Achury -->
+<component type="desktop-application">
+  <id>io.github.diegoachury.CaffeineCosmic</id>
+
+  <name>Caffeine for COSMIC</name>
+  <summary>Keep your screen awake from the panel</summary>
+  <summary xml:lang="es">Mantén tu pantalla despierta desde el panel</summary>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+
+  <developer id="io.github.diegoachury">
+    <name>Diego Achury</name>
+  </developer>
+
+  <description>
+    <p>
+      A lightweight tray indicator for the COSMIC desktop that prevents the
+      screen from turning off or the system from suspending due to inactivity,
+      with a single click from the panel's Status Area.
+    </p>
+    <p xml:lang="es">
+      Un indicador ligero para el escritorio COSMIC que evita que la pantalla se
+      apague o el equipo se suspenda por inactividad, con un solo clic desde la
+      bandeja del panel.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>One-click toggle from the COSMIC panel</li>
+      <li>Timed sessions: 15 min, 30 min, 1 h, 2 h, 4 h</li>
+      <li>Indefinite keep-awake session</li>
+      <li>Uses the native COSMIC idle-inhibition mechanism (cosmic-idle)</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">io.github.diegoachury.CaffeineCosmic.desktop</launchable>
+
+  <url type="homepage">https://github.com/diegoachury/caffeine-cosmic</url>
+  <url type="bugtracker">https://github.com/diegoachury/caffeine-cosmic/issues</url>
+  <url type="vcs-browser">https://github.com/diegoachury/caffeine-cosmic</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>The Caffeine menu in the COSMIC panel</caption>
+      <image>https://raw.githubusercontent.com/diegoachury/caffeine-cosmic/main/assets/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+
+  <categories>
+    <category>Utility</category>
+  </categories>
+
+  <keywords>
+    <keyword>caffeine</keyword>
+    <keyword>idle</keyword>
+    <keyword>inhibit</keyword>
+    <keyword>screensaver</keyword>
+    <keyword>COSMIC</keyword>
+  </keywords>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="0.1.0" date="2026-06-18">
+      <description>
+        <p>Initial release.</p>
+      </description>
+    </release>
+  </releases>
+</component>

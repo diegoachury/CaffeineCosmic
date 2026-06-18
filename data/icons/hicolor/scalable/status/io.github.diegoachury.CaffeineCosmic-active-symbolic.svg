@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <g fill="#2e3436" stroke="#2e3436" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+    <!-- vapor -->
+    <path d="M5.5 1.6 C5 2.4 6 3 5.5 3.9" fill="none"/>
+    <path d="M8 1.2 C7.5 2 8.5 2.6 8 3.5" fill="none"/>
+    <!-- cuerpo de la taza (relleno = activa) -->
+    <path d="M3.2 6 H10.3 V9.2 a3 3 0 0 1 -3 3 H6.2 a3 3 0 0 1 -3 -3 Z"/>
+    <!-- asa -->
+    <path d="M10.3 6.9 H11.8 a2 2 0 0 1 0 3.4 H10.3" fill="none"/>
+    <!-- platillo -->
+    <path d="M2.6 13.4 H10.9" fill="none"/>
+  </g>
+</svg>

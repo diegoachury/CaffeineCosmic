@@ -1,0 +1,16 @@
+# Rust
+/target/
+**/*.rs.bk
+
+# Flatpak (artefactos de build local)
+/.flatpak-builder/
+/build/
+/build-dir/
+/repo/
+*.flatpak
+
+# Editores / SO
+*.swp
+.DS_Store
+.idea/
+.vscode/

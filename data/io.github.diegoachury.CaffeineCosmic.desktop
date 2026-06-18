@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Caffeine for COSMIC
+Name[es]=Cafeína para COSMIC
+Comment=Keep your screen awake from the COSMIC panel
+Comment[es]=Evita que la pantalla se apague o el equipo se suspenda
+Exec=cosmic-caffeine
+Icon=io.github.diegoachury.CaffeineCosmic
+Terminal=false
+Categories=Utility;
+Keywords=caffeine;coffee;idle;inhibit;sleep;screensaver;awake;
+StartupNotify=false

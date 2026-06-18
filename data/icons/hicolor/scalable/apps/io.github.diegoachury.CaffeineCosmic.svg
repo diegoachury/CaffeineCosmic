@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- vapor -->
+  <g fill="none" stroke="#c7b8a8" stroke-width="6" stroke-linecap="round">
+    <path d="M50 18 C42 30 58 40 50 54"/>
+    <path d="M74 14 C66 28 82 38 74 52"/>
+  </g>
+  <!-- platillo -->
+  <ellipse cx="60" cy="108" rx="48" ry="9" fill="#5a4031"/>
+  <!-- cuerpo de la taza -->
+  <path d="M20 56 H100 V80 a26 26 0 0 1 -26 26 H46 a26 26 0 0 1 -26 -26 Z" fill="#6f4e37"/>
+  <!-- superficie del café -->
+  <ellipse cx="60" cy="58" rx="40" ry="8" fill="#3b2a20"/>
+  <!-- asa -->
+  <path d="M100 62 h10 a18 18 0 0 1 0 36 h-10" fill="none" stroke="#6f4e37" stroke-width="11"/>
+</svg>
