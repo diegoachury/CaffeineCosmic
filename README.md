@@ -127,6 +127,11 @@ CaffeineCosmic/
 └── README.md
 ```
 
+## 📚 Documentación
+
+- [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) — guía paso a paso para publicar en Flathub.
+- [`docs/LECCIONES-APRENDIDAS.md`](docs/LECCIONES-APRENDIDAS.md) — historia del proceso, errores reales y buenas prácticas para evitarlos desde el inicio.
+
 ## 🗺️ Roadmap
 
 - [ ] **Publicación en Flathub** (App ID `io.github.diegoachury.CaffeineCosmic`) — ver [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
