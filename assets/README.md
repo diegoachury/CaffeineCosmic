@@ -6,7 +6,7 @@ Es **obligatoria** para el catálogo de Flathub: la referencia el `metainfo.xml`
 mediante la URL
 
 ```
-https://raw.githubusercontent.com/diegoachury/caffeine-cosmic/main/assets/screenshot.png
+https://raw.githubusercontent.com/diegoachury/CaffeineCosmic/main/assets/screenshot.png
 ```
 
 por lo que debe existir en `main` antes de que la CI de Flathub valide el envío.

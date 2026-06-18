@@ -63,8 +63,8 @@ flatpak install flathub io.github.diegoachury.CaffeineCosmic
 ### Desde el código fuente
 
 ```bash
-git clone https://github.com/diegoachury/caffeine-cosmic.git
-cd caffeine-cosmic
+git clone https://github.com/diegoachury/CaffeineCosmic.git
+cd CaffeineCosmic
 ./install.sh
 ```
 
@@ -110,7 +110,7 @@ cargo fmt --check
 ### Estructura del proyecto
 
 ```
-caffeine-cosmic/
+CaffeineCosmic/
 ├── Cargo.toml · Cargo.lock     # Crate (ksni + zbus)
 ├── src/main.rs                 # Lógica del tray + inhibición D-Bus
 ├── data/                       # Recursos instalables (nombrados por App ID)

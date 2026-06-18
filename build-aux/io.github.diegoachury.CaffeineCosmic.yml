@@ -1,6 +1,6 @@
 app-id: io.github.diegoachury.CaffeineCosmic
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -30,8 +30,7 @@ modules:
       - make install PREFIX=/app
     sources:
       - type: git
-        url: https://github.com/diegoachury/caffeine-cosmic.git
+        url: https://github.com/diegoachury/CaffeineCosmic.git
         tag: v0.1.0
-        # TODO: rellenar con el SHA exacto del tag v0.1.0 antes de abrir el PR a Flathub.
-        commit: 0000000000000000000000000000000000000000
+        commit: 2e34bb127852adfe89d5eec145ff3df33e5112d1
       - cargo-sources.json

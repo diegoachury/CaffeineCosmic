@@ -6,8 +6,8 @@ description = "Indicador tipo cafeína para el panel de COSMIC (Pop!_OS)"
 authors = ["Diego Achury <achurycompany@gmail.com>"]
 license = "GPL-3.0-only"
 readme = "README.md"
-repository = "https://github.com/diegoachury/caffeine-cosmic"
-homepage = "https://github.com/diegoachury/caffeine-cosmic"
+repository = "https://github.com/diegoachury/CaffeineCosmic"
+homepage = "https://github.com/diegoachury/CaffeineCosmic"
 keywords = ["cosmic", "caffeine", "tray", "statusnotifieritem", "idle"]
 categories = ["gui"]
 

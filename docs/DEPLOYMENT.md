@@ -6,7 +6,7 @@ publicado, la app aparece automáticamente en la **tienda COSMIC** (`cosmic-stor
 que es solo un frontend de Flatpak (remotos `flathub` y `cosmic`).
 
 > Mantenedor: **Diego Achury** · GitHub `diegoachury` · repo
-> `git@github.com:diegoachury/caffeine-cosmic.git`
+> `git@github.com:diegoachury/CaffeineCosmic.git`
 
 ---
 
@@ -20,7 +20,7 @@ COSMIC, sino una app autónoma — por eso encaja en el modelo Flatpak estándar
 Flujo de publicación:
 
 ```
-  Repo upstream (GitHub: diegoachury/caffeine-cosmic)
+  Repo upstream (GitHub: diegoachury/CaffeineCosmic)
         │  git tag vX.Y.Z  +  assets/screenshot.png en main
         ▼
   Manifiesto Flatpak (build-aux/io.github.diegoachury.CaffeineCosmic.yml)
@@ -70,7 +70,7 @@ Otros requisitos:
 | Requisito | Detalle |
 |---|---|
 | Cuenta en **flathub.org** | Inicia sesión **con GitHub** (necesario para verificar el App ID `io.github.*`). |
-| Repo público en GitHub | `caffeine-cosmic` debe ser público antes de abrir el PR. |
+| Repo público en GitHub | `CaffeineCosmic` debe ser público antes de abrir el PR. |
 | `git`, `python3` con `venv` | Para regenerar `cargo-sources.json` (ver §4). |
 
 > **Nota:** `flatpak-builder` también existe como paquete del sistema, pero usar
@@ -261,7 +261,7 @@ flatpak run --command=flatpak-builder-lint org.flatpak.Builder \
 ```
 
 > **Sobre el aviso `screenshot-image-not-found`:** `appstreamcli` falla mientras la
-> URL `https://raw.githubusercontent.com/diegoachury/caffeine-cosmic/main/assets/screenshot.png`
+> URL `https://raw.githubusercontent.com/diegoachury/CaffeineCosmic/main/assets/screenshot.png`
 > no exista en la rama `main`. Es **esperado** hasta que subas el repo con
 > `assets/screenshot.png`; tras el push, el aviso desaparece. El resto del metainfo
 > ya es estructuralmente válido.
@@ -295,7 +295,7 @@ un `TODO`):
 
 ```yaml
       - type: git
-        url: https://github.com/diegoachury/caffeine-cosmic.git
+        url: https://github.com/diegoachury/CaffeineCosmic.git
         tag: v0.1.0
         commit: <SHA_DE_git_rev-parse_v0.1.0>
 ```
@@ -378,7 +378,7 @@ flatpak run io.github.diegoachury.CaffeineCosmic
 
 Para publicar una versión nueva (p. ej. `0.2.0`):
 
-1. **Upstream** (repo `caffeine-cosmic`):
+1. **Upstream** (repo `CaffeineCosmic`):
    ```bash
    # Sube la versión del crate
    #   Cargo.toml:  version = "0.2.0"
@@ -415,7 +415,7 @@ Para publicar una versión nueva (p. ej. `0.2.0`):
 
 ## 12. Checklist final pre-PR
 
-- [ ] Repo `caffeine-cosmic` **público** en GitHub.
+- [ ] Repo `CaffeineCosmic` **público** en GitHub.
 - [ ] `assets/screenshot.png` presente en `main`.
 - [ ] `Cargo.lock` commiteado y `cargo-sources.json` regenerado a partir de él.
 - [ ] `git tag vX.Y.Z` creado y empujado; `commit:` del manifiesto = `git rev-parse vX.Y.Z`.

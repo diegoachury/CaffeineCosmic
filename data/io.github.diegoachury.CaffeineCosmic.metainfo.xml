@@ -36,14 +36,14 @@
 
   <launchable type="desktop-id">io.github.diegoachury.CaffeineCosmic.desktop</launchable>
 
-  <url type="homepage">https://github.com/diegoachury/caffeine-cosmic</url>
-  <url type="bugtracker">https://github.com/diegoachury/caffeine-cosmic/issues</url>
-  <url type="vcs-browser">https://github.com/diegoachury/caffeine-cosmic</url>
+  <url type="homepage">https://github.com/diegoachury/CaffeineCosmic</url>
+  <url type="bugtracker">https://github.com/diegoachury/CaffeineCosmic/issues</url>
+  <url type="vcs-browser">https://github.com/diegoachury/CaffeineCosmic</url>
 
   <screenshots>
     <screenshot type="default">
       <caption>The Caffeine menu in the COSMIC panel</caption>
-      <image>https://raw.githubusercontent.com/diegoachury/caffeine-cosmic/main/assets/screenshot.png</image>
+      <image>https://raw.githubusercontent.com/diegoachury/CaffeineCosmic/main/assets/screenshot.png</image>
     </screenshot>
   </screenshots>
 
