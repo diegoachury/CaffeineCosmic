@@ -153,11 +153,10 @@ en la bandeja de COSMIC.
 
 ## 💖 Donaciones
 
-Si te resulta útil, puedes apoyar el desarrollo con **Bitcoin (BTC)**:
+Si te resulta útil, puedes apoyar el desarrollo:
 
-```
-bc1qdul5hesqdhsqyx7pe5cj5v3jlm8xv4mvmvznmj
-```
+- **Bitcoin (BTC):** `bc1qdul5hesqdhsqyx7pe5cj5v3jlm8xv4mvmvznmj`
+- **Ethereum (ETH):** `0xC5310aB5e06772df146217B2F75FEf156E441D2a`
 
 ¡Gracias! 🙏
 
