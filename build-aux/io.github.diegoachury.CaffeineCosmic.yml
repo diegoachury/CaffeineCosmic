@@ -32,5 +32,5 @@ modules:
       - type: git
         url: https://github.com/diegoachury/CaffeineCosmic.git
         tag: v0.1.0
-        commit: 2e34bb127852adfe89d5eec145ff3df33e5112d1
+        commit: 1a64ca0a367aca41ac084aa8502668aa2fef5b82
       - cargo-sources.json
