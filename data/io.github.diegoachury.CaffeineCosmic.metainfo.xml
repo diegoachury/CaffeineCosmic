@@ -36,6 +36,10 @@
 
   <launchable type="desktop-id">io.github.diegoachury.CaffeineCosmic.desktop</launchable>
 
+  <provides>
+    <id>com.system76.CosmicApplet</id>
+  </provides>
+
   <url type="homepage">https://github.com/diegoachury/CaffeineCosmic</url>
   <url type="bugtracker">https://github.com/diegoachury/CaffeineCosmic/issues</url>
   <url type="vcs-browser">https://github.com/diegoachury/CaffeineCosmic</url>
